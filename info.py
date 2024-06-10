@@ -17,9 +17,9 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'TechVJBot')
-API_ID = int(environ.get('API_ID', '24625610'))
-API_HASH = environ.get('API_HASH', 'a10e67fe1f93472c69b151201fef34d6')
+SESSION = environ.get('SESSION', '')
+API_ID = int(environ.get('API_ID', ''))
+API_HASH = environ.get('API_HASH', '')
 BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 # Bot settings
@@ -32,7 +32,7 @@ SPELL_IMG = environ.get("SPELL_IMG", "https://te.legra.ph/file/15c1ad448dfe472a5
 # Admins, Channels & Users
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002158584372'))
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7040444713 5978875038').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('-1002206634110', ').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('', ').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 
